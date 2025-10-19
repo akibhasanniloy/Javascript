@@ -47,10 +47,36 @@ for (let k = 1; k <= 100; k++){
 }
 
 //2
-let gamenum=25;
-let userNum = prompt("Guess the game number: ");
+// let gamenum=25;
+// let userNum = prompt("Guess the game number: ");
 
-while (userNum != gamenum) {
-    userNum= prompt("You entered wrong number. Guess again.");
+// while (userNum != gamenum) {
+//     userNum= prompt("You entered wrong number. Guess again.");
+// }
+// console.log("congratulations you guess the right number.");
+
+
+
+//string
+let stri = "Javascript";
+console.log(stri);
+console.log(stri[0]);
+console.log(stri.length);
+
+let obj = {
+    item: "pen",
+    price: 10,
 }
-console.log("congratulations you guess the right number.");
+let output = `the cost of ${obj.item} is ${obj.price} euro`;
+console.log(output);
+console.log("the cost of", obj.item, " is", obj.price);
+
+let specialString = `This is string letreal`;
+console.log(typeof specialString);
+
+
+// practice questions
+let userName = prompt("Enter you name: ");
+
+let usernameAfter = `@${userName}${userName.length}`;
+console.log(usernameAfter);
