@@ -9,6 +9,7 @@ resetBtn.addEventListener("click", () => {
 })
 
 let turnO = true;//player x, player O
+let count = 0;// to track draw
 
 let winPatterns = [
     [0, 1, 2],
@@ -23,6 +24,7 @@ let winPatterns = [
 
 const resetGame = ()=> {
     turnO = true;
+    count = 0;
     enabledBoxes();
     msgContainer.classList.add("hide");
 }
@@ -40,16 +42,29 @@ boxes.forEach((box) => {
             turnO = true;
         }
         box.disabled = true;
+        count++;
 
-        checkWinner();
+        let isWinner = checkWinner();
+
+        if (count === 9 && !isWinner) {
+            gameDraw();
+        }
+
+        // checkWinner();
     });
 });
 
+const gameDraw = () => {
+    msg.innerText = `Game was a Draw.`;
+    msgContainer.classList.remove("hide");
+    disabledBoxes();
+};
+
 const disabledBoxes = () => {
-    for(let box of boxes){
+    for (let box of boxes) {
         box.disabled = true;
     }
-}
+};
 
 const enabledBoxes = () => {
     for(let box of boxes){
