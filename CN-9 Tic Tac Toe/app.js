@@ -4,12 +4,12 @@ let newGameBtn = document.querySelector("#new-btn");
 let msgContainer = document.querySelector(".msg-container");
 let msg = document.querySelector("#msg");
 
+let turnO = true;//player x, player O
+let count = 0;// to track draw
+
 resetBtn.addEventListener("click", () => {
     console.log("clicked");
 })
-
-let turnO = true;//player x, player O
-let count = 0;// to track draw
 
 let winPatterns = [
     [0, 1, 2],
