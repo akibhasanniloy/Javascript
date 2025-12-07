@@ -61,6 +61,13 @@ async function getAllData() {
   await getdata(3);
 }
 
+//auto execute
+(async function () {
+  await getdata(1);
+  await getdata(2);
+  await getdata(3);
+})();
+
 //promise chain
 // getdata(1)
 //   .then((res) => {
